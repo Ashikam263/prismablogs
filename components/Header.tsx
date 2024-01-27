@@ -12,10 +12,10 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link legacyBehavior href="/">
-        <a className="bold" data-active={isActive('/')}>
+      <Link href="/">
+        <div className="bold" data-active={isActive('/')}>
           Feed
-        </a>
+        </div>
       </Link>
       <style jsx>{`
         .bold {
@@ -44,10 +44,10 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className="left">
-        <Link legacyBehavior href="/">
-          <a className="bold" data-active={isActive('/')}>
+        <Link href="/">
+          <div className="bold" data-active={isActive('/')}>
             Feed
-          </a>
+          </div>
         </Link>
         <style jsx>{`
           .bold {
@@ -85,8 +85,8 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link legacyBehavior href="/api/auth/signin">
-          <a data-active={isActive('/signup')}>Log in</a>
+        <Link href="/api/auth/signin">
+          <div data-active={isActive('/signup')}>Log in</div>
         </Link>
         <style jsx>{`
           a {
@@ -116,13 +116,13 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link legacyBehavior href="/">
-          <a className="bold" data-active={isActive('/')}>
+        <Link href="/">
+          <div className="bold" data-active={isActive('/')}>
             Feed
-          </a>
+          </div>
         </Link>
         <Link href="/drafts">
-          <a data-active={isActive('/drafts')}>My drafts</a>
+          <div data-active={isActive('/drafts')}>My drafts</div>
         </Link>
         <style jsx>{`
           .bold {
@@ -150,13 +150,13 @@ const Header: React.FC = () => {
         <p>
           {session.user.name} ({session.user.email})
         </p>
-        <Link legacyBehavior href="/create">
+        <Link href="/create">
           <button>
-            <a>New post</a>
+            New post
           </button>
         </Link>
         <button onClick={() => signOut()}>
-          <a>Log out</a>
+          Log out
         </button>
         <style jsx>{`
           a {
